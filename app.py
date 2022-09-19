@@ -8,13 +8,11 @@ import plotly.express as px
 
 df = pd.read_csv('owid-covid-data.csv')
 
+df.drop(['FIPS','Admin2','Province_State','Last_Update','Combined_Key'],axis=1,inplace=True)
+df.rename(columns={'Country_Region': 'Country'},inplace=True)
+
 print(df)
 print(df.shape)
-
-
-# df.dropna(axis=0,inplace=True)
-
-# print(df.head(1))
-# print(df.shape)
-
+print(df.info())
+print(df.groupby("Country")['Confirmed','Active','Recovered','Deaths'].sum().reset_index())
 
