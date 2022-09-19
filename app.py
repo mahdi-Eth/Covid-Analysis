@@ -10,9 +10,5 @@ df = pd.read_csv('owid-covid-data.csv')
 
 df.drop(['FIPS','Admin2','Province_State','Last_Update','Combined_Key'],axis=1,inplace=True)
 df.rename(columns={'Country_Region': 'Country'},inplace=True)
-
-print(df)
-print(df.shape)
-print(df.info())
-print(df.groupby("Country")['Confirmed','Active','Recovered','Deaths'].sum().reset_index())
+world_grouped_by =  df.groupby('Country')['Confirmed','Active','Recovered','Deaths'].sum().reset_index()
 
