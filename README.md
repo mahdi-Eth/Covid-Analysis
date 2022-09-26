@@ -1,4 +1,3 @@
 # Covid-Analysis
-## Covid-19 data analysis project using python, numpy, pandas, matplotlib
+## Covid-19 data analysis Miniproject using python, numpy, pandas and matplotlib.
 
-### This is the master branch for final changes.
